@@ -71,6 +71,7 @@ class MiniBlocks(models.Model):
         verbose_name = "Mini Blocks"
         verbose_name_plural = "Mini Blocks"
 
+
 class MiniBlock3(models.Model):
     title = models.CharField(max_length=255)
     description1 = models.TextField(max_length=255, blank=True, null=True)
@@ -85,3 +86,73 @@ class MiniBlock3(models.Model):
     class Meta:
         verbose_name = "Mini Block3"
         verbose_name_plural = "Mini Block3"
+
+
+
+class SevenBlocks(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField(max_length=255)
+    image = models.ImageField(upload_to="seven-blocks")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Seven Blocks"
+        verbose_name_plural = "Seven Blocks"
+
+
+class QuestionsBlock(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField(max_length=255)
+    
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Questions Block"
+        verbose_name_plural = "Questions Blocks"
+
+ 
+class ContactUs(models.Model):
+    title = models.CharField(max_length=255)
+    description1 = models.TextField(max_length=255, blank=True, null=True)
+    description2 = models.TextField(max_length=255, blank=True, null=True)
+    email_name = models.CharField(max_length=255,blank=True, null=True)
+    email_url = models.URLField(max_length=200, blank=True, null=True) 
+    contact_name = models.CharField(max_length=255,blank=True, null=True)
+    contact_class = models.CharField(max_length=200, blank=True, null=True) 
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Contact Us"
+        verbose_name_plural = "Contact Us" 
+
+
+class SixBlocks(models.Model):
+    title = models.CharField(max_length=255)
+    description1 = models.TextField(max_length=255, blank=True, null=True)
+    description2 = models.TextField(max_length=255, blank=True, null=True)
+    html_class = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Six Blocks"
+        verbose_name_plural = "Six Blocks"
+
+class Socials(models.Model):
+    title = models.CharField(max_length=50)
+    html_class = models.CharField(max_length=255)
+    url = models.URLField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Social"
+        verbose_name_plural = "Socials"
+ 

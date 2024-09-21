@@ -6,7 +6,12 @@ from .models import (
     RightBlock,
     MiniBlocks,
     LeftBlock,
-    MiniBlock3
+    MiniBlock3,
+    SevenBlocks,
+    QuestionsBlock,
+    ContactUs,
+    SixBlocks,
+    Socials
  
 )
 
@@ -16,3 +21,10 @@ admin.site.register(LeftBlock)
 admin.site.register(RightBlock)
 admin.site.register(MiniBlocks)
 admin.site.register(MiniBlock3)
+admin.site.register(SevenBlocks)
+admin.site.register(QuestionsBlock)
+admin.site.register(ContactUs)
+admin.site.register(SixBlocks)
+admin.site.register(Socials)
+
+

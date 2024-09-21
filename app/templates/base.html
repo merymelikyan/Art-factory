@@ -140,7 +140,16 @@ https://templatemo.com/tm-537-art-factory
                     <p>{{right_block.description}}</p>
                     <ul>
                        <div>
-                             <li>
+                          {% for block in mini_blocks %}
+                            <li>
+                              <img src="{{block.image.url}}" alt="">
+                              <div class="text">
+                                  <h6>{{block.title}}</h6>
+                                  <p>{{block.description}}</p>
+                              </div>
+                            </li>
+                          {% endfor %}  </li>
+                             {% comment %} <li>
                                 <img src="{{mini_blocks.0.image.url}}" alt="">
                                 <div class="text">
                                     <h6>{{mini_blocks.0.title}}</h6>
@@ -152,8 +161,8 @@ https://templatemo.com/tm-537-art-factory
                                 <div class="text">
                                     <h6>{{mini_blocks.1.title}}</h6>
                                     <p>{{mini_blocks.1.description}}</p>
-                                </div>
-                            </li>
+                                </div> {% endcomment %}
+                          
                             
                        </div>
                        <li>
@@ -181,58 +190,58 @@ https://templatemo.com/tm-537-art-factory
                 <div class="owl-carousel owl-theme">
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-01.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.0.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">First Box Service</h5>
-                        <p>Aenean vulputate massa sed neque consectetur, ac fringilla quam aliquet. Sed a enim nec eros tempor cursus at id libero.</p>
+                        <h5 class="service-title">{{seven_blocks.0.title}}</h5>
+											<p>{{seven_blocks.0.description}}</p>
                         <a href="#" class="main-button">Read More</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-02.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.1.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Second Box Title</h5>
-                        <p>Pellentesque vitae urna ut nisi viverra tristique quis at dolor. In non sodales dolor, id egestas quam. Aliquam erat volutpat. </p>
+                        <h5 class="service-title">{{seven_blocks.1.title}}</h5>
+                        <p>{{seven_blocks.1.description}}</p>
                         <a href="#" class="main-button">Discover More</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-03.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.2.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Third Title Box</h5>
-                        <p>Quisque finibus libero augue, in ultrices quam dictum id. Aliquam quis tellus sit amet urna tincidunt bibendum.</p>
+                        <h5 class="service-title">{{seven_blocks.2.title}}</h5>
+                        <p>{{seven_blocks.2.description}}</p>
                         <a href="#" class="main-button">More Detail</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-02.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.3.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Fourth Service Box</h5>
-                        <p>Fusce sollicitudin feugiat risus, tempus faucibus arcu blandit nec. Duis auctor dolor eu scelerisque vestibulum.</p>
+                        <h5 class="service-title">{{seven_blocks.3.title}}</h5>
+                        <p>{{seven_blocks.3.description}}</p>
                         <a href="#" class="main-button">Read More</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-01.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.4.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Fifth Service Title</h5>
-                        <p>Curabitur aliquam eget tellus id porta. Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit.</p>
+                        <h5 class="service-title">{{seven_blocks.4.title}}</h5>
+                        <p>{{seven_blocks.4.description}}</p>
                         <a href="#" class="main-button">Discover</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-03.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.5.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Sixth Box Title</h5>
-                        <p>Ut nibh velit, aliquam vitae pellentesque nec, convallis vitae lacus. Aliquam porttitor urna ut pellentesque.</p>
+                        <h5 class="service-title">{{seven_blocks.5.title}}</h5>
+                        <p>{{seven_blocks.5.description}}</p>
                         <a href="#" class="main-button">Detail</a>
                     </div>
                     <div class="item service-item">
                         <div class="icon">
-                            <i><img src="{% static "images/service-icon-01.png" %}" alt=""></i>
+                            <i><img src="{{seven_blocks.6.image.url}}" alt=""></i>
                         </div>
-                        <h5 class="service-title">Seventh Title Box</h5>
-                        <p>Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam.</p>
+                        <h5 class="service-title">{{seven_blocks.6.title}}</h5>
+                        <p>{{seven_blocks.6.description}}</p>
                         <a href="#" class="main-button">Read More</a>
                     </div>
                 </div>
@@ -249,12 +258,12 @@ https://templatemo.com/tm-537-art-factory
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Frequently Asked Questions</h2>
+                        <h2>{{questions_block.title}}</h2>
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
                     <div class="section-heading">
-                        <p>Vivamus venenatis eu mi ac mattis. Maecenas ut elementum sapien. Nunc euismod risus ac lobortis congue. Sed erat quam.</p>
+                        <p>{{questions_block.description}}</p>
                     </div>
                 </div>
             </div>
@@ -262,11 +271,11 @@ https://templatemo.com/tm-537-art-factory
 
             <div class="row">
                 <div class="left-text col-lg-6 col-md-6 col-sm-12">
-                    <h5>Class aptent taciti sociosqu ad litora torquent per conubia</h5>
+                    <h5>{{contact_us.title}}</h5>
                     <div class="accordion-text">
-                        <p>Curabitur placerat diam in risus lobortis, laoreet porttitor est elementum. Nulla ultricies risus quis risus scelerisque, a aliquam tellus maximus. Cras pretium nulla ac convallis iaculis. Aenean bibendum erat vitae odio sodales, in facilisis tellus volutpat.</p>
-                        <p>Sed lobortis pellentesque magna ac congue. Suspendisse quis molestie magna, id eleifend ex. Ut mollis ultricies diam nec dictum. Morbi commodo hendrerit mi vel vulputate. Proin non tincidunt dui. Lorem ipsum dolor sit amet.</p>
-                        <span>Email: <a href="#">email@company.com</a><br></span>
+                        <p>{{contact_us.description1}}</p>
+                        <p>{{contact_us.description2}}</p>
+                        <span>{{contact_us.email_name}}<a href="{{contact_us.email.url}}">{{contact_us.contact_name}}</a><br></span>
                         <a href="#contact-us" class="main-button">Contact Us</a>
                     </div>
                 </div>
@@ -274,89 +283,93 @@ https://templatemo.com/tm-537-art-factory
                     <div class="accordions is-first-expanded">
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>First Common Question</span>
+                                <span>{{six_blocks.0.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.0.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Duis vulputate porttitor urna sit amet pretium. Phasellus sed pulvinar eros, condimentum consequat ex. Suspendisse potenti.
+                                    <p>{{six_blocks.0.description1}}
                                     <br><br>
-                                    Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
+																		{{six_blocks.0.description2}}
+                                    </p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Second Question Answer</span>
+                                <span>{{six_blocks.1.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.1.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Sed odio elit, cursus sed consequat at, rutrum eget augue. Cras ac eros iaculis, tempor quam sit amet, scelerisque mi. Quisque eu risus eget nunc porttitor vestibulum at a ante.
+                                    <p>{{six_blocks.1.description1}}
                                     <br><br>
-                                    Praesent ut placerat turpis, vel pellentesque dolor. Sed rutrum eleifend tortor, eu luctus orci sagittis in. In blandit fringilla mollis.</p>
+																		{{six_blocks.1.description2}}
+                                    </p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Third Answer for you</span>
+                                <span>{{six_blocks.2.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.2.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Proin feugiat ante ut vulputate rutrum. Nam quis erat turpis. Nullam maximus pharetra lorem, eu condimentum est iaculis ut. Pellentesque mattis ultrices dignissim. 
+                                    <p>{{six_blocks.2.description1}}
                                     <br><br>
-                                    Etiam et enim finibus, feugiat massa efficitur, finibus sapien. Sed cursus lacus quis arcu scelerisque, eget ornare risus maximus. Aenean non lectus id odio rhoncus pharetra.</p>
+                                    {{six_blocks.2.description2}}</p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fourth Question Asked</span>
+                                <span>{{six_blocks.3.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.3.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Phasellus eu purus ornare, eleifend orci nec, egestas nulla. Sed sed aliquet sapien. Proin placerat, ipsum eu posuere blandit, tellus quam consectetur nisi, id sollicitudin diam ex at nisi.
+                                    <p>{{six_blocks.3.description1}}
                                     <br><br>
-                                    Aenean fermentum eget turpis egestas semper. Sed finibus mollis venenatis. Praesent at sem in massa iaculis pharetra.</p>
+                                    {{six_blocks.3.description2}}</p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fifth Ever Question</span>
+                                <span>{{six_blocks.4.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.4.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Quisque aliquet ipsum ut magna rhoncus, euismod lacinia elit rhoncus. Sed sapien elit, mollis ut ultricies quis, fermentum nec ante.
+                                    <p>{{six_blocks.4.description1}}
                                     <br><br>
-                                    Sed nec ex nec tortor fermentum sollicitudin id ut ligula. Ut sagittis rutrum lectus, non sagittis ante euismod eu. </p>
+                                    {{six_blocks.4.description2}}</p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Sixth Sense Question</span>
+                                <span>{{six_blocks.5.title}}</span>
                                 <span class="icon">
-                                    <i class="icon fa fa-chevron-right"></i>
+                                    <i class="{{six_blocks.5.html_class}}"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Suspendisse potenti. Ut dapibus leo ut massa vulputate semper. Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
+                                    <p>{{six_blocks.5.description1}}
+																		<br><br>
+                                    {{six_blocks.5.description2}}</p>
                                 </div>
                             </div>
                         </article>
@@ -403,7 +416,7 @@ https://templatemo.com/tm-537-art-factory
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Your Message" required="" class="contact-field"></textarea>
+                                <textarea name="content" rows="6" id="message" placeholder="Your Message" required="" class="contact-field"></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
@@ -427,18 +440,32 @@ https://templatemo.com/tm-537-art-factory
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 col-md-12 col-sm-12">
-                    <p class="copyright">Copyright &copy; 2020 Art Factory Company 
+                    <p class="copyright">{{footer_text.text1}}
                 
-                . Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+											{{footer_text.text2}}<a rel="nofollow" href="{{footer_text.link_url}}">{{footer_text.link_name}}</a></p>
                 </div>
-                <div class="col-lg-5 col-md-12 col-sm-12">
+								
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  
                     <ul class="social">
+                      <div class="{{social.0.title}}">
+                        
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                         <li><a href="#"><i class="fa fa-rss"></i></a></li>
                         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
+                    </ul> 
+
+                  {% comment %} <ul class="social">
+                    {% for social in socials %}
+                      <li>
+                        <a href="{{social.url}}" target="_blank" title="{{social.title}}">
+                          <i class="{{social.html_class}}"></i>
+                        </a>
+                      </li>
+                    {% endfor %} {% endcomment %}
+                  {% comment %} </ul>	 {% endcomment %}
                 </div>
             </div>
         </div>
