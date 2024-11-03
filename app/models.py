@@ -146,9 +146,10 @@ class SixBlocks(models.Model):
 
 class Socials(models.Model):
     title = models.CharField(max_length=50)
-    html_class = models.CharField(max_length=255)
     url = models.URLField(max_length=255, blank=True)
-
+    html_class = models.CharField(max_length=255)
+    
+    
     def __str__(self):
         return self.title
 

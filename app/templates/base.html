@@ -444,19 +444,17 @@ https://templatemo.com/tm-537-art-factory
                 
 											{{footer_text.text2}}<a rel="nofollow" href="{{footer_text.link_url}}">{{footer_text.link_name}}</a></p>
                 </div>
-								
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                  
                     <ul class="social">
-                      <div class="{{social.0.title}}">
-                        
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                    </ul> 
-
+                      {% for social in socials %}
+                        <li>
+                          <a href="{{social.url}}" target="_blank" title="{{social.title}}">
+                            <i class="{{social.html_class}}"></i>
+                          </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+ 
                   {% comment %} <ul class="social">
                     {% for social in socials %}
                       <li>
