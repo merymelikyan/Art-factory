@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}    
+
+{% block services_template %}
+    <!-- ***** Features Small Start ***** -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                   
+                   
+                  {% for block in seven_blocks %}
+                    <div class="item service-item">
+                      <div class="icon">
+                          <i><img src="{{block.image.url}}" alt=""></i>
+                      </div>
+                      <h5 class="service-title">{{block.title}}</h5>
+                      <p>{{block.description}}</p>
+                      <a href="{% url 'read_more' block.id%}" class="main-button">{{block.text}}</a>
+                    </div>
+                  {% endfor %}
+                   
+                    {% comment %} <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.0.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.0.title}}</h5>
+						<p>{{seven_blocks.0.description}}</p>
+                        <a href="{{block.link_url}}" class="main-button">{{block.link_name}}</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.1.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.1.title}}</h5>
+                        <p>{{seven_blocks.1.description}}</p>
+                        <a href="#" class="main-button">Discover More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.2.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.2.title}}</h5>
+                        <p>{{seven_blocks.2.description}}</p>
+                        <a href="#" class="main-button">More Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.3.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.3.title}}</h5>
+                        <p>{{seven_blocks.3.description}}</p>
+                        <a href="#" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.4.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.4.title}}</h5>
+                        <p>{{seven_blocks.4.description}}</p>
+                        <a href="#" class="main-button">Discover</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.5.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.5.title}}</h5>
+                        <p>{{seven_blocks.5.description}}</p>
+                        <a href="#" class="main-button">Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.6.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.6.title}}</h5>
+                        <p>{{seven_blocks.6.description}}</p>
+                        <a href="#" class="main-button">Read More</a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+{% endblock %}
+

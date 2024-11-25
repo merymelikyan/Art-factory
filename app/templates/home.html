@@ -1,0 +1,367 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block home_template %} 
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1>{{header_text.title1}} <strong>{{header_text.title2}}</strong></h1>
+                        <p>{{header_text.description}}</p>
+                        <a href="#about" class="main-button-slider">Find Out More</a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                        <img src="{{header_text.image.url}}" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="{{left_block.image.url}}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                    <div class="left-heading">
+                        <h5>{{left_block.title}}</h5>
+                    </div>
+                    <div class="left-text">
+                        <p>{{left_block.description1}} <a href="{{left_block.link_url}}">{{left_block.link_name}} </a>f{{left_block.description2}}<br><br>
+                          {{left_block.description3}}</p>
+                        <a href="#about2" class="main-button">Discover More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hr"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Big Item Start ***** -->
+    <section class="section" id="about2">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <div class="left-heading">
+                        <h5>{{right_block.title}}</h5>
+                    </div>
+                    <p>{{right_block.description}}</p>
+                    <ul>
+                       <div>
+                          {% for block in mini_blocks %}
+                            <li>
+                              <img src="{{block.image.url}}" alt="">
+                              <div class="text">
+                                  <h6>{{block.title}}</h6>
+                                  <p>{{block.description}}</p>
+                              </div>
+                            </li>
+                          {% endfor %}  </li>
+                             {% comment %} <li>
+                                <img src="{{mini_blocks.0.image.url}}" alt="">
+                                <div class="text">
+                                    <h6>{{mini_blocks.0.title}}</h6>
+                                    <p>{{mini_blocks.0.description}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="{{mini_blocks.1.image.url}}" alt="">
+                                <div class="text">
+                                    <h6>{{mini_blocks.1.title}}</h6>
+                                    <p>{{mini_blocks.1.description}}</p>
+                                </div> {% endcomment %}
+                          
+                            
+                       </div>
+                       <li>
+                            <img src="{{mini_block3.image.url}}" alt="">
+                            <div class="text">
+                                <h6>{{mini_block3.title}}</h6>
+                                <p>{{mini_block3.description1}} <a rel="nofollow" href="{{mini_block3.link_url}}">{{mini_block3.link_name}}</a> {{mini_block3.description2}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="{{right_block.image.url}}" class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+
+    <!-- ***** Features Small Start ***** -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+
+                   {% for block in seven_blocks %}
+                      <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{block.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{block.title}}</h5>
+                        <p>{{block.description}}</p>
+                        <a href="{% url 'read_more' block.id%}" class="main-button">{{block.text}}</a>
+                     </div>
+                    {% endfor %}
+
+                    {% comment %} <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.1.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.1.title}}</h5>
+                        <p>{{seven_blocks.1.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">Discover More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.2.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.2.title}}</h5>
+                        <p>{{seven_blocks.2.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">More Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.3.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.3.title}}</h5>
+                        <p>{{seven_blocks.3.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.4.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.4.title}}</h5>
+                        <p>{{seven_blocks.4.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">Discover</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.5.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.5.title}}</h5>
+                        <p>{{seven_blocks.5.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="{{seven_blocks.6.image.url}}" alt=""></i>
+                        </div>
+                        <h5 class="service-title">{{seven_blocks.6.title}}</h5>
+                        <p>{{seven_blocks.6.description}}</p>
+                        <a href="{% url 'read_more' %}" class="main-button">Read More</a>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+
+    <!-- ***** Frequently Question Start ***** -->
+    <section class="section" id="frequently-question">
+        <div class="container">
+            <!-- ***** Section Title Start ***** -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-heading">
+                        <h2>{{questions_block.title}}</h2>
+                    </div>
+                </div>
+                <div class="offset-lg-3 col-lg-6">
+                    <div class="section-heading">
+                        <p>{{questions_block.description}}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ***** Section Title End ***** -->
+
+            <div class="row">
+                <div class="left-text col-lg-6 col-md-6 col-sm-12">
+                    <h5>{{contact_us.title}}</h5>
+                    <div class="accordion-text">
+                        <p>{{contact_us.description1}}</p>
+                        <p>{{contact_us.description2}}</p>
+                        <span>{{contact_us.email_name}}<a href="{{contact_us.email.url}}">{{contact_us.contact_name}}</a><br></span>
+                        <a href="#contact-us" class="main-button">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="accordions is-first-expanded">
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.0.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.0.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.0.description1}}
+                                    <br><br>
+																		{{six_blocks.0.description2}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.1.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.1.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.1.description1}}
+                                    <br><br>
+																		{{six_blocks.1.description2}}
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.2.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.2.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.2.description1}}
+                                    <br><br>
+                                    {{six_blocks.2.description2}}</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.3.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.3.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.3.description1}}
+                                    <br><br>
+                                    {{six_blocks.3.description2}}</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.4.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.4.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.4.description1}}
+                                    <br><br>
+                                    {{six_blocks.4.description2}}</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="accordion">
+                            <div class="accordion-head">
+                                <span>{{six_blocks.5.title}}</span>
+                                <span class="icon">
+                                    <i class="{{six_blocks.5.html_class}}"></i>
+                                </span>
+                            </div>
+                            <div class="accordion-body">
+                                <div class="content">
+                                    <p>{{six_blocks.5.description1}}
+																		<br><br>
+                                    {{six_blocks.5.description2}}</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Frequently Question End ***** -->
+
+
+    <!-- ***** Contact Us Start ***** -->
+    <section class="section" id="contact-us">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- ***** Contact Map Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div id="map">
+                      <!-- How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                    -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- ***** Contact Map End ***** -->
+
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="post">
+                          <div class="row">
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" id="name" placeholder="Full Name" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="text" id="email" placeholder="E-mail" required="" class="contact-field">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="content" rows="6" id="message" placeholder="Your Message" required="" class="contact-field"></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Send It</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+
+{% endblock %}

@@ -3,8 +3,8 @@ from django.db import models
 class HeaderText (models.Model):
     title1 = models.CharField(max_length=255)
     title2 = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
-    image = models.ImageField(upload_to="header_text")
+    description = models.TextField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to="header_text", blank=True, null=True)
 
     def __str__(self):
         return f"{self.title1} {self.title2}"
@@ -29,7 +29,7 @@ class FooterText(models.Model):
 
 
 class LeftBlock(models.Model):
-    image = models.ImageField(upload_to="left_block")
+    image = models.ImageField(upload_to="left_block", blank=True, null=True)
     title = models.CharField(max_length=255)
     link_url = models.URLField(max_length=200, blank=True, null=True) 
     link_name = models.TextField(max_length=255, blank=True, null=True)
@@ -47,8 +47,8 @@ class LeftBlock(models.Model):
              
 class RightBlock(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
-    image = models.ImageField(upload_to="right-block")
+    description = models.TextField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to="right-block", blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -61,8 +61,8 @@ class RightBlock(models.Model):
  
 class MiniBlocks(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
-    image = models.ImageField(upload_to="mini-blocks")
+    description = models.TextField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to="mini-blocks", blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -78,7 +78,7 @@ class MiniBlock3(models.Model):
     description2 = models.TextField(max_length=255, blank=True, null=True)
     link_name = models.TextField(max_length=255, blank=True, null=True)
     link_url = models.URLField(max_length=200, blank=True, null=True) 
-    image = models.ImageField(upload_to="mini-block3")
+    image = models.ImageField(upload_to="mini-block3", blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -90,9 +90,11 @@ class MiniBlock3(models.Model):
 
 
 class SevenBlocks(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
-    image = models.ImageField(upload_to="seven-blocks")
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to="seven-blocks", blank=True, null=True)
+    text = models.TextField(max_length=55, blank=True, null=True)
+    
 
     def __str__(self):
         return self.title
@@ -104,7 +106,7 @@ class SevenBlocks(models.Model):
 
 class QuestionsBlock(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField(max_length=255)
+    description = models.TextField(max_length=255, blank=True, null=True)
     
     def __str__(self):
         return self.title
